@@ -1,0 +1,10 @@
+<template name="appHome">
+	<div class="ui stackable three column centered grid">
+		<div class="column">
+			{{> atForm}}
+			{{#if currentUser}}
+				<div class="ui button red" id="logout">Log Out</div>
+			{{/if}}
+		</div>
+	</div>
+</template>

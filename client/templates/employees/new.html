@@ -1,0 +1,50 @@
+<template name="newEmployee">
+	<div class="ui stackable  centered grid">
+		<div class="ui twelve wide column">
+			<form class="ui form">
+				<div class="ui stacked segment">
+					<h4 class="ui dividing header">Datos Personales</h4>
+					<div class="field">
+						<label>Nombre Completo</label>
+						<div class="two fields">
+							<div class="field">
+								<input type="text" name="forenames" id="forenames" placeholder="Nombres">
+							</div>
+							<div class="field">
+								<input type="text" name="surnames" id="surnames" placeholder="Apellidos">
+							</div>
+						</div>
+						<div class="three fields">
+							<div class="field">
+								<label for="sex">Sexo</label>
+								<div class="ui fluid selection dropdown">
+									<input type="hidden" name="sex">
+									<i class="dropdown icon"></i>
+									<div class="default text">Seleccionar...</div>
+									<div class="menu">
+										{{#each sexes}}
+											<div class="item" data-value="{{name}}"><i class="{{icon}} icon"></i>{{name}}</div>
+										{{/each}}
+									</div>
+								</div>
+							</div>
+							<div class="field">
+								<label for="country">Nacionalidad</label>
+								<div class="ui fluid search selection dropdown">
+									<input type="hidden" name="country">
+									<i class="dropdown icon"></i>
+									<div class="default text">Seleccionar...</div>
+									<div class="menu">
+										{{#each countries}}
+											<div class="item" data-value="{{name}}"><i class="{{abbreviation}} flag"></i>{{esp_name}}</div>
+										{{/each}}
+									</div>
+								</div>
+							</div>
+						</div>						
+					</div>
+				</div>	
+			</form>
+		</div>
+	</div>
+</template>
