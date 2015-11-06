@@ -1,5 +1,5 @@
 <template name="newEmployee">
-	<div class="ui stackable  centered grid">
+	<div class="ui stackable centered grid">
 		<div class="ui twelve wide column">
 			<form class="ui form">
 				<div class="ui stacked segment">
@@ -36,7 +36,7 @@
 									<div class="default text">Seleccionar...</div>
 									<div class="menu">
 										{{#each countries}}
-											<div class="item" data-value="{{name}}"><i class="{{abbreviation}} flag"></i>{{esp_name}}</div>
+											<div class="item" data-value="{{name}}"><i class="{{abbreviation}} flag"></i>{{capitalize esp_name}}</div>
 										{{/each}}
 									</div>
 								</div>

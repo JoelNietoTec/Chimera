@@ -7,6 +7,6 @@ Template.newEmployee.helpers({
 		return Sexes.find();
 	},
 	countries: function() {
-		return Countries.find();
+		return Countries.find({}, {sort: {esp_name: 1}});
 	}
 });

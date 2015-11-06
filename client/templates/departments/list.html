@@ -1,0 +1,31 @@
+<template name="listDepartments">
+	<div class="ui stackable centered grid">
+		<div class="ui ten wide column">
+			<h2 class="ui header">Departamentos</h2>
+			{{> newDepartment}}
+			<table class="ui celled table">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Abreviatura</th>
+						<th>Eliminar</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each departments}}
+						<tr>
+							<td>{{name}}</td>
+							<td>{{abbreviation}}</td>
+							<td class="center aligned"><a href="" class="ui vertical animated red mini button">
+								<div class="hidden content">Borrar</div>
+								<div class="visible content">
+									<i class="trash icon"></i>
+								</div>
+							</a></td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</template>
