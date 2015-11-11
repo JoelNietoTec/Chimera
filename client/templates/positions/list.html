@@ -1,0 +1,26 @@
+<template name="listPositions">
+	<div class="ui stackable centered grid">
+		<div class="ui ten wide column">
+			<h2 class="ui header">Cargos</h2>
+			{{> newPosition}}
+			<table class="ui compact unstackable table">
+				<thead>
+					<tr>
+						<th>Departamento</th>
+						<th>Codigo</th>
+						<th>Nombre</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each positions}}
+						<tr>
+							<td>{{department}}</td>
+							<td>{{code}}</td>
+							<td>{{name}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</template>

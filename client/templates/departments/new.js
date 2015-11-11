@@ -3,7 +3,7 @@ Template.newDepartment.events({
 		e.preventDefault();
 		var department = {
 			name: $(e.target).find('[name=name]').val(),
-			abbreviation: $(e.target).find('[name=abbreviation]').val()
+			abbreviation: $(e.target).find('[name=abbreviation]').val().toUpperCase()
 		}
 
 		var errors = validateDepartment(department);

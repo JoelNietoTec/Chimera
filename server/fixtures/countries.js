@@ -140,8 +140,8 @@ if (Countries.find().count() ===0) {
 	Countries.insert({ name: 'mayotte', esp_name: 'mayotte', abbreviation: 'yt', code: '175'	});
 	Countries.insert({ name: 'mexico', esp_name: 'méxico', abbreviation: 'mx', code: '484'	});
 	Countries.insert({ name: 'moldova', esp_name: 'moldavia', abbreviation: 'md', code: '498'	});
-	Countries.insert({ name: 'monaco', esp_name: 'mónaco', abbreviation: 'ms', code: '492'	});
-	Countries.insert({ name: 'mongolia', esp_name: 'mongolia', abbreviation: 'mg', code: '496'	});
+	Countries.insert({ name: 'monaco', esp_name: 'mónaco', abbreviation: 'mc', code: '492'	});
+	Countries.insert({ name: 'mongolia', esp_name: 'mongolia', abbreviation: 'mn', code: '496'	});
 	Countries.insert({ name: 'montenegro', esp_name: 'montenegro', abbreviation: 'me', code: '499'	});
 	Countries.insert({ name: 'montserrat', esp_name: 'montserrat', abbreviation: 'ms', code: '500'	});
 	Countries.insert({ name: 'morocco', esp_name: 'marruecos', abbreviation: 'ma', code: '504'	});

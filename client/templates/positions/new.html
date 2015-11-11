@@ -1,0 +1,27 @@
+<template name="newPosition">
+	<form class="ui form">
+		<div class="ui stacked segment">
+			<h4 class="ui dividing header">Datos Generales</h4>
+			<div class="fields">
+				<div class="eight wide field">
+					<label>Departamento</label>
+					<select name="departament" id="departamento" class="ui dropdown">
+						<option value="">Seleccionar...</option>
+						{{#each departments}}
+							<option value="{{name}}">{{name}}</option>
+						{{/each}}
+					</select>
+				</div>
+				<div class="four wide field">
+					<label>Codigo</label>
+					<input type="text" id="code" name="code" placeholder="Codigo">
+				</div>
+				<div class="eight wide field">
+					<label>Cargo</label>
+					<input type="text" id="name" name="name" placeholder="Nombre del cargo">
+				</div>
+			</div>
+			<input type="submit" class="ui button primary" value="Guardar">
+		</div>
+	</form>
+</template>
