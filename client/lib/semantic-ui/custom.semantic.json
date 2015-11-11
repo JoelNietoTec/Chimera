@@ -60,7 +60,7 @@
     "classic": false,
     "colored": false,
     "default": true,
-    "duo": false,
+    "duo": true,
     "fixed": false,
     "flat": false,
     "github": false,

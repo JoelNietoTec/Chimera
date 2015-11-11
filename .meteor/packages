@@ -27,3 +27,4 @@ check
 cfs:standard-packages
 cfs:gridfs
 underscore
+sacha:spin
