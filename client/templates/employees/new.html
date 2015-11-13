@@ -58,6 +58,32 @@
 								<label>Correo Electrónico</label>
 								<input type="email" name="email" id="email" placeholder="usuario@dominio.com">
 							</div>	
+						</div>
+						<h4 class="ui dividing header">
+							Datos Laborales
+						</h4>
+						<div class="fields">
+							<div class="ten wide field">
+								<label>Cargo</label>
+								<div class="two fields">
+									<div class="field">
+										<select name="department" id="department" class="ui dropdown">
+											<option value="">Seleccionar</option>
+											{{#each departments}}
+												<option value="{{name}}">{{name}}</option>
+											{{/each}}
+										</select>
+									</div>
+									<div class="field">
+										<select name="position" id="position" class="ui dropdown">
+											<option value="">Seleccionar...</option>
+											{{#each positions}}
+												<option value="{{name}}">{{name}}</option>
+											{{/each}}
+										</select>
+									</div>
+								</div>	
+							</div>
 						</div>				
 					</div>
 				</div>	

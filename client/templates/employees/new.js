@@ -11,6 +11,12 @@ Template.newEmployee.helpers({
 	},
 	picture: function() {
 		return Session.get("picture")
+	},
+	departments: function() {
+		return Departments.find({}, {sort: {name: 1}});
+	},
+	positions: function() {
+		return Positions.find({department: Session.get('department')}, {sort:{name:1}}).fetch();
 	}
 });
 
@@ -34,5 +40,8 @@ Template.newEmployee.events({
 				}
 			});
 		})
-	}
+	},
+	'change #department': function(event, template) {
+		return Session.set('department', $("[name=department]").val());
+	} 
 });
