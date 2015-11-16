@@ -1,11 +1,15 @@
 Template.newEmployee.onRendered(function(){
   this.$("#department").dropdown({
   	onChange: function(val) {
-  		$('#position').dropdown('clear');
+  		$('#position').dropdown('restore defaults');
   		Session.set('department', val);
+  		
   	}
   });
   this.$('#position').dropdown();
+  this.$('#sex').dropdown();
+  this.$('#country').dropdown();
+
 });
 
 Template.newEmployee.helpers({
@@ -25,7 +29,6 @@ Template.newEmployee.helpers({
 		return Positions.find({department: Session.get('department')}, {sort:{name:1}}).fetch();
 	}
 });
-
 
 Template.newEmployee.created = function () {
 	Session.setDefault("picture", '');

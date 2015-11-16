@@ -120,7 +120,7 @@ if (Countries.find().count() ===0) {
 	Countries.insert({ name: 'latvia', esp_name: 'letonia', abbreviation: 'lv', code: '428'	});
 	Countries.insert({ name: 'lebanon', esp_name: 'líbano', abbreviation: 'lb', code: '422'	});
 	Countries.insert({ name: 'lesotho', esp_name: 'lesoto', abbreviation: 'ls', code: '426'	});
-	Countries.insert({ name: 'liberia', esp_name: 'liberia', abbreviation: 'lb', code: '430'	});
+	Countries.insert({ name: 'liberia', esp_name: 'liberia', abbreviation: 'lr', code: '430'	});
 	Countries.insert({ name: 'libya', esp_name: 'libia', abbreviation: 'ly', code: '434'	});
 	Countries.insert({ name: 'liechtenstein', esp_name: 'liechtenstein', abbreviation: 'li', code: '438'	});
 	Countries.insert({ name: 'lithuania', esp_name: 'lituania', abbreviation: 'lt', code: '440'	});
