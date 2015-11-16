@@ -1,5 +1,11 @@
 Template.newEmployee.onRendered(function(){
-  this.$(".dropdown").dropdown();
+  this.$("#department").dropdown({
+  	onChange: function(val) {
+  		$('#position').dropdown('clear');
+  		Session.set('department', val);
+  	}
+  });
+  this.$('#position').dropdown();
 });
 
 Template.newEmployee.helpers({
@@ -40,8 +46,5 @@ Template.newEmployee.events({
 				}
 			});
 		})
-	},
-	'change #department': function(event, template) {
-		return Session.set('department', $("[name=department]").val());
-	} 
+	}
 });
