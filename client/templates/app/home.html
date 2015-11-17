@@ -1,18 +1,10 @@
 <template name="appHome">
-	<div class="ui centered grid">
-		<div class="ten wide column">
-			<div class="ui two column middle aligned very relaxed stackable grid">
-				<div class="column">
-					{{> atForm state='signIn'}}
-					{{#if currentUser}}
-						<div id="logout" class="ui button red">Salir</div>
-					{{/if}}
-				</div>
-				<div class="ui vertical divider">Or </div>
-				<div class="column">
-					{{> atForm state='signUp'}}
-				</div>
-			</div>
+	<div class="ui centered stackable grid">
+		<div class="six wide column">
+			{{> atForm}}
+			{{#if currentUser}}
+				<div id="logout" class="ui button red">Salir</div>
+			{{/if}}
 		</div>
 	</div>
 </template>

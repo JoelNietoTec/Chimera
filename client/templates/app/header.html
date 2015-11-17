@@ -1,7 +1,15 @@
 <template name="appHeader">
 	<nav>
-		<div class="ui top large menu">
+		<div class="ui top menu">
 			<a href="{{pathFor 'appHome'}}" class="header item">Chimera</a>
+			<div class="right menu">
+				<div class="ui dropdown item">{{currentUserEmail}}
+					<i class="dropdown icon"></i>
+					<div class="menu">
+						<a href="" class="item">Perfil</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</nav>
 </template>
