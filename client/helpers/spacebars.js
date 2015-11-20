@@ -7,3 +7,12 @@ Template.registerHelper('currentUserEmail', function() {
 	if (user && user.emails)
 		return user.emails[0].address
 });
+
+Template.registerHelper('myProfileId', function() {
+	var user = Meteor.user();
+	var profile = function() {
+		return Profile.findOne({userId: user._id});
+	};
+	if (user && profile)
+		return profile._id
+});

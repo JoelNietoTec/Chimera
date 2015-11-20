@@ -14,6 +14,7 @@ Template.newProfile.events({
 			userId: user._id
 		};
 		Profiles.insert(profile);
+		Router.go('appHome');
 	}
 });
 

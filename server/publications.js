@@ -13,3 +13,7 @@ Meteor.publish('countries', function() {
 Meteor.publish('positions', function() {
 	return Positions.find();
 });
+
+Meteor.publish('currentProfile', function() {
+	return Profiles.find({userId: this.userId});
+});

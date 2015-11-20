@@ -1,4 +1,4 @@
-<template name="newProfile">
+<template name="editProfile">
 	<div class="ui stackable centered grid">
 		<div class="ui twelve wide column">
 			<form class="ui form">
@@ -8,10 +8,10 @@
 						<label>Nombre Completo</label>
 						<div class="two fields">
 							<div class="field">
-								<input type="text" id="forenames" name="forenames" placeholder="Nombres">
+								<input type="text" id="forenames" value="{{forenames}}" name="forenames" placeholder="Nombres">
 							</div>
 							<div class="field">
-								<input type="text" id="surnames" name="surnames" placeholder="Apellidos">
+								<input type="text" id="surnames" name="surnames" value="{{surnames}}" placeholder="Apellidos">
 							</div>
 						</div>
 					</div>
@@ -20,19 +20,19 @@
 						<div class="three fields">
 							<div class="field">
 								<div class="ui left icon input">
-									<input type="tel" id="mobile_tel" name="mobile_tel" placeholder="Celular">
+									<input type="tel" id="mobile_tel" name="mobile_tel" value="{{mobile_tel}}" placeholder="Celular">
 									<i class="mobile icon"></i>
 								</div>
 							</div>
 							<div class="field">
 								<div class="ui left icon input">
-									<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina">
+									<input type="tel" id="office_tel" name="office_tel" value="{{office_tel}}" placeholder="Oficina">
 									<i class="building outline icon"></i>
 								</div>
 							</div>
 							<div class="field">
 								<div class="ui left icon input">
-									<input type="tel" id="home_tel" name="home_tel" placeholder="Domicilio">
+									<input type="tel" id="home_tel" name="home_tel" value="{{home_tel}}" placeholder="Domicilio">
 									<i class="home icon"></i>
 								</div>	
 							</div>
@@ -43,7 +43,7 @@
 							<div class="field">
 								<label for="sex">Sexo</label>
 								<div class="ui fluid selection dropdown" id="sex">
-									<input type="hidden" name="sex" >
+									<input type="hidden" name="sex" value="{{sex}}">
 									<i class="dropdown icon"></i>
 									<div class="default text">Seleccionar...</div>
 									<div class="menu">
@@ -55,7 +55,7 @@
 							</div>
 							<div class="field">
 								<label for="department">Departamento</label>
-								<select name="department" id="department" class="ui dropdown">
+								<select name="department" id="department" value="{{department}}" class="ui dropdown">
 									<option value="">Seleccionar...</option>
 									{{#each departments}}
 										<option value="{{name}}">{{name}}</option>
@@ -64,7 +64,7 @@
 							</div>
 							<div class="field">
 								<label for="position">Cargo</label>
-								<select name="position" id="position" class="ui dropdown">
+								<select name="position" id="position" value="{{position}}" class="ui dropdown">
 									<option value="">Seleccionar...</option>
 									{{#each positions}}
 										<option value="{{name}}">{{name}}</option>
