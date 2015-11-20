@@ -27,3 +27,5 @@ check
 cfs:standard-packages
 cfs:gridfs
 underscore
+momentjs:moment
+rzymek:moment-locale-es

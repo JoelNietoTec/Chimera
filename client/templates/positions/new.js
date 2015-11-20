@@ -25,6 +25,7 @@ Template.newPosition.events({
 		};
 
 		Positions.insert(position);
+		$('#department').dropdown('restore defaults');
 		$('.form')[0].reset();
 
 		Router.go('listPositions');
