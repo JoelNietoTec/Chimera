@@ -16,3 +16,7 @@ Template.registerHelper('myProfileId', function() {
 	if (user && profile)
 		return profile._id
 });
+
+Template.registerHelper('isEqual', function(element1, element2) {
+	return element2 === element1;
+});
