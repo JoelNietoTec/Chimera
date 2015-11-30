@@ -1,0 +1,55 @@
+<template name="naturalClient">
+	<div class="two fields">
+		<div class="field">
+			<label for="forenames">Nombres</label>
+			<input type="text" id="forenames" name="forenames" placeholder="Nombres...">
+		</div>
+		<div class="field">
+			<label for="surnames">Apellidos</label>
+			<input type="text" id="surnames" name="surnames" placeholder="Apellidos...">
+		</div>
+	</div>
+	<div class="three fields">
+		<div class="field">
+			<label for="sex">Sexo</label>
+			<div class="ui fluid selection dropdown" id="sex">
+				<input type="hidden" name="sex">
+				<i class="dropdown icon"></i>
+				<div class="default text">Seleccionar...</div>
+				<div class="menu">
+					{{#each sexes}}
+						<div class="item" data-value="{{name}}"><i class="{{icon}} icon"></i>{{name}}</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label for="documentId">Documento de Identidad</label>
+			<div class="ui left action input">
+				<div class="ui basic floating dropdown button" id="documentId">
+					<div class="text">Tipo</div>
+					<i class="dropdown icon"></i>
+					<div class="menu">
+						{{#each documentTypes}}
+						<div class="item" data-value="{{name}}">{{name}}</div>
+						{{/each}}
+					</div>
+				</div>
+				<input type="text" name="documentId" id="documentId" placeholder="Id Documento">
+			</div>
+		</div>
+		<div class="field">
+			<label for="country">Nacionalidad</label>
+			<div class="ui fluid search selection dropdown" id="country">
+				<input type="hidden" name="country">
+				<i class="dropdown icon"></i>
+				<div class="default text">Seleccionar...</div>
+				<div class="menu">
+					{{#each countries}}
+						<div class="item" data-value="{{name}}"><i class="{{abbreviation}} flag"></i>{{capitalize esp_name}}</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

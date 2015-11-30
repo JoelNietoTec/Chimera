@@ -17,3 +17,19 @@ Meteor.publish('positions', function() {
 Meteor.publish('currentProfile', function() {
 	return Profiles.find({userId: this.userId});
 });
+
+Meteor.publish('clientTypes', function() {
+	return clientTypes.find();
+});
+
+Meteor.publish('documentTypes', function() {
+	return documentTypes.find();
+});
+
+Meteor.publish('industries', function() {
+	return Industries.find();
+});
+
+Meteor.publish('clients', function() {
+	return Clients.find();
+});

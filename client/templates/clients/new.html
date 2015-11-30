@@ -1,0 +1,32 @@
+<template name="newClient">
+	<div class="ui stackable centered grid">
+		<div class="ui twelve wide column">
+			<form class="ui form">
+				<div class="ui stacked segment">
+					<h4 class="ui dividing header">
+						Nuevo Cliente
+					</h4>
+					<div class="field">
+						<div class="three fields">
+							<div class="field">
+								<label for="clientType">Tipo de Cliente</label>
+								<div class="ui fluid selection dropdown" id="clientType">
+									<input type="hidden" name="clientType">
+									<i class="dropdown icon"></i>
+									<div class="default text">Seleccionar...</div>
+									<div class="menu">
+										{{#each clientTypes}}
+											<div class="item" data-value="{{name}}"><i class="{{icon}} icon"></i>{{name}}</div>
+										{{/each}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{{> naturalClient}}
+					<input type="submit" class="ui primary button" value="Guardar">
+				</div>
+			</form>
+		</div>
+	</div>
+</template>
