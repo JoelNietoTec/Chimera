@@ -23,12 +23,15 @@
 							</div>
 						</div>
 					</div>
-					{{#if currentType}}
+					{{#if isEqual currentType 'Natural'}}
 						{{> naturalClient}}
+						<input type="submit" class="ui primary button" value="Guardar">
 					{{else}}
-						{{> legalClient}}
-					{{/if}}
-					<input type="submit" class="ui primary button" value="Guardar">
+						{{#if isEqual currentType 'Jurídica'}}
+							{{> legalClient}}
+							<input type="submit" class="ui primary button" value="Guardar">
+						{{/if}}		
+					{{/if}}				
 				</div>
 			</form>
 		</div>

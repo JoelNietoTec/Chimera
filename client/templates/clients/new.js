@@ -3,10 +3,7 @@ Template.newClient.helpers({
 		return clientTypes.find();
 	},
 	currentType: function() {
-		if (Session.get('currentType') === 'Natural')
-			return true
-		else
-			return false
+		return Session.get('currentType');
 	}
 });
 
