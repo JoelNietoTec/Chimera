@@ -23,7 +23,11 @@
 							</div>
 						</div>
 					</div>
-					{{> naturalClient}}
+					{{#if currentType}}
+						{{> naturalClient}}
+					{{else}}
+						{{> legalClient}}
+					{{/if}}
 					<input type="submit" class="ui primary button" value="Guardar">
 				</div>
 			</form>

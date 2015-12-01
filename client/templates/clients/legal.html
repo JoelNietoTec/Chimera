@@ -1,0 +1,23 @@
+<template name="legalClient">
+	<div class="fields">
+		<div class="ten wide field">
+			<label for="businessName">Razón Social</label>
+			<input type="text" id="businessName" name="businessName" placeholder="Nombre Legal">
+		</div>
+		<div class="six wide field">
+			<label for="ruc">RUC</label>
+			<input type="text" id="ruc" name="ruc" placeholder="R.U.C.">
+		</div>
+	</div>
+	<div class="three fields">
+		<div class="field">
+			<label for="industry">Industria</label>
+			<select name="industry" id="industry" class="ui dropdown">
+				<option value="">Seleccionar...</option>
+				{{#each industries}}
+					<option value="{{name}}">{{name}}</option>
+				{{/each}}
+			</select>
+		</div>
+	</div>
+</template>

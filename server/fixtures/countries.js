@@ -237,4 +237,3 @@ if (Countries.find().count() ===0) {
 	Countries.insert({ name: 'zambia', esp_name: 'zambia', abbreviation: 'za', code: '894'	});
 	Countries.insert({ name: 'zimbabwe', esp_name: 'zimbabue', abbreviation: 'zw', code: '716'	});
 }
-

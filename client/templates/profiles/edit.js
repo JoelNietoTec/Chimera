@@ -25,3 +25,9 @@ Template.editProfile.onRendered(function(){
   this.$('#position').dropdown('set selected', this.data.position);
   this.$('#sex').dropdown();
 });
+
+Template.editProfile.events({
+	'submit form': function (e) {
+		e.preventDefault();
+	}
+});

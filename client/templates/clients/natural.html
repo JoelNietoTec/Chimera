@@ -26,8 +26,9 @@
 		<div class="field">
 			<label for="documentId">Documento de Identidad</label>
 			<div class="ui left action input">
-				<div class="ui basic floating dropdown button" id="documentId">
-					<div class="text">Tipo</div>
+				<div class="ui basic floating dropdown button">
+					<input type="hidden" name="documentType">
+					<div class="default text">Tipo</div>
 					<i class="dropdown icon"></i>
 					<div class="menu">
 						{{#each documentTypes}}
@@ -50,6 +51,35 @@
 					{{/each}}
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="fields">
+		<div class="ten wide field">
+			<label>Teléfonos</label>
+			<div class="three fields">
+				<div class="field">
+					<div class="ui left icon input">
+						<input type="tel" id="mobile_tel" name="mobile_tel" placeholder="Celular">
+						<i class="mobile icon"></i>
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina">
+						<i class="building outline icon"></i>
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<input type="tel" id="home_tel" name="home_tel" placeholder="Domicilio">
+						<i class="home icon"></i>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<div class="six wide field">
+			<label for="email">Correo electrónico</label>
+			<input type="email" id="email" name="email" placeholder="Correo Electrónico">
 		</div>
 	</div>
 </template>
