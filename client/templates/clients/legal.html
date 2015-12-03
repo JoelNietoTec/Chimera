@@ -9,7 +9,7 @@
 			<input type="text" id="ruc" name="ruc" placeholder="R.U.C.">
 		</div>
 	</div>
-	<div class="three fields">
+	<div class="two fields">
 		<div class="field">
 			<label for="industry">Industria</label>
 			<select name="industry" id="industry" class="ui dropdown">
@@ -18,6 +18,42 @@
 					<option value="{{name}}">{{name}}</option>
 				{{/each}}
 			</select>
+		</div>
+		<div class="field">
+			<label for="country">País de origen</label>
+			<div class="ui fluid search selection dropdown" id="country">
+				<input type="hidden" name="country">
+				<i class="dropdown icon"></i>
+				<div class="default text">Seleccionar...</div>
+				<div class="menu">
+					{{#each countries}}
+						<div class="item" data-value="{{name}}"><i class="{{abbreviation}} flag"></i>{{capitalize esp_name}}</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fields">
+		<div class="ten wide field">
+			<label>Teléfonos</label>
+			<div class="two fields">
+				<div class="field">
+					<div class="ui left icon input">
+						<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina">
+						<i class="building outline icon"></i>
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<input type="tel" id="fax_tel" name="fax_tel" placeholder="Fax">
+						<i class="fax icon"></i>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<div class="six wide field">
+			<label for="email">Correo electrónico</label>
+			<input type="email" id="email" name="email" placeholder="Correo electrónico">
 		</div>
 	</div>
 </template>

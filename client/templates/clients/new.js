@@ -43,13 +43,25 @@ Template.naturalClient.helpers({
 Template.legalClient.helpers({
 	industries: function () {
 		return Industries.find({}, {sort:{name: 1}});
+	},
+	countries: function() {
+		return Countries.find({}, {sort:{esp_name: 1}});
 	}
 });
 
 Template.newClient.events({
 	'submit form': function (e) {
 		e.preventDefault();
-		var client = {
+		var $form = $('.ui.form');
+
+		var client = $form.form('get values');
+
+		if (_.property('clientType')(client) === 'Natural')
+			client = _.extend(client, {
+				businessName: _.property('surnames')(client).toUpperCase() + ", " + _.property('forenames')(client).toUpperCase()
+			});
+
+		/*var client = {
 			clientType: $(e.target).find('[name=clientType]').val(),
 			surnames: $(e.target).find('[name=surnames]').val(),
 			forenames: $(e.target).find('[name=forenames]').val(),
@@ -57,7 +69,8 @@ Template.newClient.events({
 			country: $(e.target).find('[name=country]').val(), 
 			documentType: $(e.target).find('[name=documentType]').val(),
 			documentId: $(e.target).find('[name=documentId]').val()
-		};
-		Clients.insert(client);
+		};*/
+		console.log(client);
+		//Clients.insert(client);
 	}
 });
