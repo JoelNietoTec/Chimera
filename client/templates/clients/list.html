@@ -2,7 +2,11 @@
 	<div class="ui stackable centered grid">
 		<div class="ui fourteen wide column">
 			<h1 class="ui header">Clientes</h1>
-			<table class="ui compact table">
+			<a href="{{pathFor 'newClient'}}" class="ui primary button">
+				<i class="icon add user"></i>
+				Nuevo Cliente
+			</a>
+			<table class="ui blue table">
 				<thead>
 					<th>Tipo Cliente</th>
 					<th>Nombre</th>
@@ -16,8 +20,8 @@
 							<td>{{clientType}}</td>
 							<td>{{businessName}}</td>
 							<td>{{email}}</td>
-							<td>{{country}}</td>
-							<td>{{created}}</td>
+							<td>{{{countryData country}}}</td>
+							<td>{{formatDate createdDate}}</td>
 						</tr>
 					{{/each}}
 				</tbody>

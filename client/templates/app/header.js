@@ -7,5 +7,11 @@ Template.appHeader.events({
 		event.preventDefault();
 		if (Meteor.userId())
 			AccountsTemplates.logout();
+	},
+	'click #toggle': function(event) {
+		$('.ui.sidebar')
+			.sidebar('setting', 'transition', 'overlay')
+			.sidebar('toggle')
+		;
 	}
 });

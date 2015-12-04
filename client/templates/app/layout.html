@@ -1,8 +1,11 @@
 <template name="appLayout">
 	{{#if currentUser}}
 		{{> appHeader}}
+		{{> appSidebar}}
 	{{/if}}
-	<div class="ui container" id="main">
-		{{> yield}}
+	<div class="pusher">
+		<div class="ui container" id="main">
+			{{> yield}}
+		</div>
 	</div>
 </template>

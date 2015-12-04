@@ -7,12 +7,14 @@ Template.newClient.helpers({
 	}
 });
 
+
 Template.newClient.onRendered(function() {
 	this.$('#clientType').dropdown({
 		onChange: function(val) {
 			Session.set('currentType', val);
 		}
 	});
+	Session.set('currentType', "");
 });
 
 Template.naturalClient.onRendered(function() {
@@ -56,13 +58,19 @@ Template.newClient.events({
 
 		var client = $form.form('get values');
 
+
 		if (_.property('clientType')(client) === 'Natural')
 			client = _.extend(client, {
-				businessName: _.property('surnames')(client).toUpperCase() + ", " + _.property('forenames')(client).toUpperCase(), 
-				created: new Date()
+				businessName: _.property('surnames')(client).toUpperCase() + ", " + _.property('forenames')(client).toUpperCase()
 			});
+
+		//Se agregan la fecha de alta
+		client = _.extend(client, {
+			createdDate: new Date()
+		});
 
 		console.log(client);
 		Clients.insert(client);
+		Router.go('listClients');
 	}
 });

@@ -20,3 +20,18 @@ Template.registerHelper('myProfileId', function() {
 Template.registerHelper('isEqual', function(element1, element2) {
 	return element2 === element1;
 });
+
+Template.registerHelper('formatDate', function(date) {
+	return moment(date).format('DD/MM/YYYY');
+});
+
+Template.registerHelper('countryData', function(countryName) {
+	var country = Countries.findOne({name: countryName});
+	
+	var capitalize = function(country) {
+		return country.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+	};
+	var countryCap = capitalize(country.esp_name);
+	
+	return '<i class="' + country.abbreviation + ' flag"></i> ' + countryCap; 
+});
