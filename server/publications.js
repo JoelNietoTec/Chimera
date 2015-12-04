@@ -33,3 +33,9 @@ Meteor.publish('industries', function() {
 Meteor.publish('clients', function() {
 	return Clients.find();
 });
+
+
+Meteor.publish('singleClient', function(id){
+	check(id, String);
+	return Clients.find(id);
+});

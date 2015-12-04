@@ -1,0 +1,23 @@
+<template name="updateClient">
+	<div class="ui stackable centered grid">
+		<div class="ui twelve wide column">
+			<form class="ui form">
+				<div class="ui stacked segment">
+					<h4 class="ui dividing header">
+						Actualizar Cliente
+					</h4>
+					{{currentType}}
+					{{#if isEqual currentType 'Natural'}}
+						{{> naturalClient}}
+						<input type="submit" class="ui primary button" value="Guardar">
+					{{else}}
+						{{#if isEqual currentType 'Jurídica'}}
+							{{> legalClient}}
+							<input type="submit" class="ui primary button" value="Guardar">
+						{{/if}}		
+					{{/if}}				
+				</div>
+			</form>
+		</div>
+	</div>
+</template>
