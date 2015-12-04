@@ -1,0 +1,27 @@
+<template name="listClients">
+	<div class="ui stackable centered grid">
+		<div class="ui fourteen wide column">
+			<h1 class="ui header">Clientes</h1>
+			<table class="ui compact table">
+				<thead>
+					<th>Tipo Cliente</th>
+					<th>Nombre</th>
+					<th>Email</th>
+					<th>País</th>
+					<th>Fecha de alta</th>
+				</thead>
+				<tbody>
+					{{#each clients}}
+						<tr>
+							<td>{{clientType}}</td>
+							<td>{{businessName}}</td>
+							<td>{{email}}</td>
+							<td>{{country}}</td>
+							<td>{{created}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</template>

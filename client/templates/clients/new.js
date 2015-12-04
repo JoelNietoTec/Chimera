@@ -58,19 +58,11 @@ Template.newClient.events({
 
 		if (_.property('clientType')(client) === 'Natural')
 			client = _.extend(client, {
-				businessName: _.property('surnames')(client).toUpperCase() + ", " + _.property('forenames')(client).toUpperCase()
+				businessName: _.property('surnames')(client).toUpperCase() + ", " + _.property('forenames')(client).toUpperCase(), 
+				created: new Date()
 			});
 
-		/*var client = {
-			clientType: $(e.target).find('[name=clientType]').val(),
-			surnames: $(e.target).find('[name=surnames]').val(),
-			forenames: $(e.target).find('[name=forenames]').val(),
-			sex: $(e.target).find('[name=sex]').val(),
-			country: $(e.target).find('[name=country]').val(), 
-			documentType: $(e.target).find('[name=documentType]').val(),
-			documentId: $(e.target).find('[name=documentId]').val()
-		};*/
 		console.log(client);
-		//Clients.insert(client);
+		Clients.insert(client);
 	}
 });
