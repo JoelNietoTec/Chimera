@@ -2,17 +2,17 @@
 	<div class="fields">
 		<div class="ten wide field">
 			<label for="businessName">Razón Social</label>
-			<input type="text" id="businessName" name="businessName" placeholder="Nombre Legal">
+			<input type="text" id="businessName" name="businessName" placeholder="Nombre Legal" value="{{businessName}}">
 		</div>
 		<div class="six wide field">
 			<label for="ruc">RUC</label>
-			<input type="text" id="ruc" name="ruc" placeholder="R.U.C.">
+			<input type="text" id="ruc" name="ruc" placeholder="R.U.C." value="{{ruc}}">
 		</div>
 	</div>
 	<div class="two fields">
 		<div class="field">
 			<label for="industry">Industria</label>
-			<select name="industry" id="industry" class="ui dropdown">
+			<select name="industry" id="industry" class="ui dropdown" value="{{industry}}">
 				<option value="">Seleccionar...</option>
 				{{#each industries}}
 					<option value="{{name}}">{{name}}</option>
@@ -22,7 +22,7 @@
 		<div class="field">
 			<label for="country">País de origen</label>
 			<div class="ui fluid search selection dropdown" id="country">
-				<input type="hidden" name="country">
+				<input type="hidden" name="country" value="country">
 				<i class="dropdown icon"></i>
 				<div class="default text">Seleccionar...</div>
 				<div class="menu">
@@ -39,13 +39,13 @@
 			<div class="two fields">
 				<div class="field">
 					<div class="ui left icon input">
-						<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina">
+						<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina" value="{{office_tel}}">
 						<i class="building outline icon"></i>
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
-						<input type="tel" id="fax_tel" name="fax_tel" placeholder="Fax">
+						<input type="tel" id="fax_tel" name="fax_tel" placeholder="Fax" value="{{fax_tel}}">
 						<i class="fax icon"></i>
 					</div>	
 				</div>
@@ -53,11 +53,11 @@
 		</div>
 		<div class="six wide field">
 			<label for="email">Correo electrónico</label>
-			<input type="email" id="email" name="email" placeholder="Correo electrónico">
+			<input type="email" id="email" name="email" placeholder="Correo electrónico" value="{{email}}">
 		</div>
 	</div>
 	<div class="ten wide field">
 		<label for="address">Dirección</label>
-		<input type="text" id="address" name="address" placeholder="Dirección de envío">
+		<input type="text" id="address" name="address" placeholder="Dirección de envío" value="{{address}}">
 	</div>
 </template>

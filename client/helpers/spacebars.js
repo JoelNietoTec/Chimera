@@ -22,7 +22,10 @@ Template.registerHelper('isEqual', function(element1, element2) {
 });
 
 Template.registerHelper('formatDate', function(date) {
-	return moment(date).format('DD/MM/YYYY');
+	if (!date)
+		return ""
+	else
+		return moment(date).format('DD/MM/YYYY');
 });
 
 Template.registerHelper('countryData', function(countryName) {

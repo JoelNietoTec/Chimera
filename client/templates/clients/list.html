@@ -6,22 +6,24 @@
 				<i class="icon add user"></i>
 				Nuevo Cliente
 			</a>
-			<table class="ui blue table">
+			<table class="ui blue celled table">
 				<thead>
 					<th>Tipo Cliente</th>
 					<th>Nombre</th>
 					<th>Email</th>
 					<th>País</th>
 					<th>Fecha de alta</th>
+					<th>Fecha modificación</th>
 				</thead>
 				<tbody>
 					{{#each clients}}
 						<tr>
 							<td>{{clientType}}</td>
-							<td>{{businessName}}</td>
+							<td class="selectable"><a href="{{pathFor 'updateClient'}}">{{businessName}}</a></td>
 							<td>{{email}}</td>
 							<td>{{{countryData country}}}</td>
 							<td>{{formatDate createdDate}}</td>
+							<td>{{formatDate modifyDate}}</td>
 						</tr>
 					{{/each}}
 				</tbody>

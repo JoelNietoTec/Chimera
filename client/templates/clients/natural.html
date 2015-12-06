@@ -27,7 +27,7 @@
 			<label for="documentId">Documento de Identidad</label>
 			<div class="ui left action input">
 				<div class="ui basic floating dropdown button">
-					<input type="hidden" name="documentType">
+					<input type="hidden" name="documentType" value="{{documentType}}">
 					<div class="default text">Tipo</div>
 					<i class="dropdown icon"></i>
 					<div class="menu">
@@ -36,13 +36,13 @@
 						{{/each}}
 					</div>
 				</div>
-				<input type="text" name="documentId" id="documentId" placeholder="Id Documento">
+				<input type="text" name="documentId" id="documentId" placeholder="Id Documento" value="{{documentId}}">
 			</div>
 		</div>
 		<div class="six wide field">
 			<label for="country">Nacionalidad</label>
 			<div class="ui fluid search selection dropdown" id="country">
-				<input type="hidden" name="country">
+				<input type="hidden" name="country" value="{{country}}">
 				<i class="dropdown icon"></i>
 				<div class="default text">Seleccionar...</div>
 				<div class="menu">
@@ -59,19 +59,19 @@
 			<div class="three fields">
 				<div class="field">
 					<div class="ui left icon input">
-						<input type="tel" id="mobile_tel" name="mobile_tel" placeholder="Celular">
+						<input type="tel" id="mobile_tel" name="mobile_tel" placeholder="Celular" value="{{mobile_tel}}">
 						<i class="mobile icon"></i>
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
-						<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina">
+						<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina" value="{{office_tel}}">
 						<i class="building outline icon"></i>
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
-						<input type="tel" id="home_tel" name="home_tel" placeholder="Domicilio">
+						<input type="tel" id="home_tel" name="home_tel" placeholder="Domicilio" value="{{home_tel}}">
 						<i class="home icon"></i>
 					</div>	
 				</div>
@@ -79,11 +79,11 @@
 		</div>
 		<div class="six wide field">
 			<label for="email">Correo electrónico</label>
-			<input type="email" id="email" name="email" placeholder="Correo electrónico">
+			<input type="email" id="email" name="email" placeholder="Correo electrónico" value="{{email}}">
 		</div>
 	</div>
 	<div class="ten wide field">
 		<label for="address">Dirección</label>
-		<input type="text" id="address" name="address" placeholder="Dirección de envío">
+		<input type="text" id="address" name="address" placeholder="Dirección de envío" value="{{address}}">
 	</div>
 </template>
