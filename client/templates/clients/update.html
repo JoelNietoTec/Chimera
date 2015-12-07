@@ -8,11 +8,13 @@
 					</h4>
 					{{#if isEqual currentType 'Natural'}}
 						{{> naturalClient}}
-						<input type="submit" class="ui primary button" value="Guardar">
+						<a href="{{pathFor 'listClients'}}" class="ui right labeled icon button"><i class="ban icon"></i>Cancelar</a>
+						<button type="submit" class="ui right labeled icon primary button"><i class="save icon"></i>Guardar</button>
 					{{else}}
 						{{#if isEqual currentType 'Jurídica'}}
 							{{> legalClient}}
-							<input type="submit" class="ui primary button" value="Guardar">
+							<a href="{{pathFor 'listClients'}}" class="ui right labeled icon button"><i class="ban icon"></i>Cancelar</a>
+							<button type="submit" class="ui right labeled icon primary button"><i class="save icon"></i>Guardar</button>
 						{{/if}}		
 					{{/if}}				
 				</div>
