@@ -28,8 +28,8 @@ Template.updateClient.events({
 		var clientProperties = $form.form('get values');
 
 
-		if (_.property('clientType')(clientProperties) === 'Natural')
-			clientProperties = _.extend(client, {
+		if (Session.get('currentType') === 'Natural')
+			clientProperties = _.extend(clientProperties, {
 				businessName: _.property('surnames')(clientProperties).toUpperCase() + ", " + _.property('forenames')(clientProperties).toUpperCase()
 			});
 
