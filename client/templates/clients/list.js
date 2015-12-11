@@ -1,14 +1,13 @@
 Template.listClients.helpers({
 	clients: function () {
-		var search = Session.get('search');
-		return Clients.find({"businessName": /search/});
+		Meteor.subscribe('clients', Session.get("searchClient"));
+
+		return Clients.find();
 	}
 });
 
 Template.listClients.events({
 	'input #search': function (event, template) {
-		Session.set('search', event.currentTarget.value);
-		var search = Session.get('search');
-		console.log(search);
+		Session.set('searchClient', event.currentTarget.value);
 	}
 });
