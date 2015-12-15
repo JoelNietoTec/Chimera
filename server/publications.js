@@ -33,6 +33,16 @@ Meteor.publish('industries', function() {
 Meteor.publish('clients', function(searchText) {
 	if(!searchText)
 		return Clients.find();
+	var count = Clients.find(
+		{$text: {$search: searchText}},
+		{
+			fields: {
+				score: { $meta: "textScore" }
+			}
+		}
+	).count();
+
+	console.log(count);
 	return Clients.find(
 		{$text: {$search: searchText}},
 		{
