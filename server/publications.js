@@ -31,16 +31,25 @@ Meteor.publish('industries', function() {
 });
 
 Meteor.publish('clients', function(searchText) {
-	if(!searchText)
-		return Clients.find();
-	return Clients.find(
-		{$text: {$search: searchText}},
-		{
-			fields: {
-				score: { $meta: "textScore" }
+	if (searchText)
+		return Clients.find(
+			{$text: {
+				$search: searchText
+				}
+			},
+			{
+				fields: {
+					score: { $meta: 'textScore' }
+				},
+				sort: {
+					score: {
+						$meta: 'textScore'
+					}
+				}
 			}
-		}
-	);
+		);
+	else
+		return Clients.find({});
 });
 
 

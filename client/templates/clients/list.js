@@ -1,13 +1,17 @@
 Template.listClients.helpers({
 	clients: function () {
 		Meteor.subscribe('clients', Session.get("searchClient"));
-
-		return Clients.find();
+		if (Session.get("searchClient")) {
+			return Clients.find({}, {sort: [["score", "desc"]]});
+		}
+		else
+			return Clients.find({});
 	}
 });
 
 Template.listClients.events({
-	'input #search': function (event, template) {
-		Session.set('searchClient', event.currentTarget.value);
-	}
+	'keyup form input': _.debounce(function(event, template) {
+		event.preventDefault();
+		Session.set('searchClient', template.find('form input').value);
+	}, 300)	
 });
