@@ -2,7 +2,7 @@ Template.listClients.helpers({
 	clients: function () {
 		Meteor.subscribe('clients', Session.get("searchClient"));
 		if (Session.get("searchClient")) {
-			return Clients.find({}, {sort: [["score", "desc"]]});
+			return Clients.find({score: {$gt: 0}}, {sort: [["score", "desc"]]});
 		}
 		else
 			return Clients.find({});

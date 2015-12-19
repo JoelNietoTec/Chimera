@@ -10,7 +10,6 @@
 				<form class="ui form">
 					<div class="fields">
 						<div class="six wide field">
-							<label>Nombre</label>
 							<div class="fields">
 								<div class="ui icon input">
 									<input type="text" placeholder="Buscar..." id="search" name="search">
@@ -19,31 +18,39 @@
 							</div>
 						</div>
 					</div>
-					<input type="submit" class="ui primary button" value="Buscar">
 				</form>
 			</div>
-			<table class="ui blue celled table">
-				<thead>
-					<th>Tipo Cliente</th>
-					<th>Nombre</th>
-					<th>Email</th>
-					<th>País</th>
-					<th>Fecha de alta</th>
-					<th>Fecha modificación</th>
-				</thead>
-				<tbody>
-					{{#each clients}}
-						<tr>
-							<td>{{clientType}}</td>
-							<td class="selectable"><a href="{{pathFor 'updateClient'}}">{{businessName}}</a></td>
-							<td>{{email}}</td>
-							<td>{{{countryData country}}}</td>
-							<td>{{formatDate createdDate}}</td>
-							<td>{{formatDate modifyDate}}</td>
-						</tr>
-					{{/each}}
-				</tbody>
-			</table>
+			{{#if clients.count}}
+				<table class="ui blue celled table">
+					<thead>
+						<th>Tipo Cliente</th>
+						<th>Nombre</th>
+						<th>Email</th>
+						<th>País</th>
+						<th>Fecha de alta</th>
+						<th>Fecha modificación</th>
+					</thead>
+					<tbody>
+						{{#each clients}}
+							<tr>
+								<td>{{clientType}}</td>
+								<td class="selectable"><a href="{{pathFor 'updateClient'}}">{{businessName}}</a></td>
+								<td>{{email}}</td>
+								<td>{{{countryData country}}}</td>
+								<td>{{formatDate createdDate}}</td>
+								<td>{{formatDate modifyDate}}</td>
+							</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			{{else}}
+				<div class="ui piled segment">
+					<p>
+						<i class="warning sign icon"></i>
+						Lo sentimos, resultados no encontrados
+					</p>
+				</div>
+			{{/if}}
 		</div>
 	</div>
 </template>
