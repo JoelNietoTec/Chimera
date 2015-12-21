@@ -15,3 +15,7 @@ Template.listClients.events({
 		Session.set('searchClient', template.find('form input').value);
 	}, 300)	
 });
+
+Template.listClients.onRendered(function() {
+	Session.set('searchClient', "");
+});

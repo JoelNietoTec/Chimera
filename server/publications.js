@@ -31,7 +31,7 @@ Meteor.publish('industries', function() {
 });
 
 Meteor.publish('clients', function(searchText) {
-	if (searchText)
+	if (searchText) {
 		return Clients.find(
 			{$text: {
 				$search: searchText
@@ -48,6 +48,7 @@ Meteor.publish('clients', function(searchText) {
 				}
 			}
 		);
+	}
 	else
 		return Clients.find({});
 });
@@ -56,4 +57,8 @@ Meteor.publish('clients', function(searchText) {
 Meteor.publish('singleClient', function(id){
 	check(id, String);
 	return Clients.find(id);
+});
+
+Meteor.publish('employees', function() {
+	return Employees.find();
 });

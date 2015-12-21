@@ -9,7 +9,20 @@ Template.newEmployee.onRendered(function(){
   this.$('#position').dropdown();
   this.$('#sex').dropdown();
   this.$('#country').dropdown();
-
+  $('.ui.form').form({
+  	fields: {
+  		forenames: 'empty',
+  		surnames: 'empty',
+  		sex: 'empty',
+  		country: 'empty',
+  		office_phone: 'empty',
+  		mobile_phone: 'empty',
+  		email: 'empty',
+  		position: 'empty',
+  		department: 'empty',
+  		startDate: 'empty'
+  	}
+  });
 });
 
 Template.newEmployee.helpers({
@@ -36,6 +49,31 @@ Template.newEmployee.created = function () {
 
 
 Template.newEmployee.events({
+	'submit form': function(e) {
+		e.preventDefault();
+		var $form = $('.ui.form');
+
+		var employee = $form.form('get values');
+
+		var startDate = moment(_.property('startDate')(employee), "DD/MM/YYYY");
+
+		employee = _.extend(employee, {
+			startDate: moment(startDate).toDate()
+		});
+
+		Employees.insert(employee);
+
+		console.log(employee);
+
+		Router.go('listEmployees', {});
+
+	},
+	'blur #startDate': function(event, template) {
+		event.preventDefault();
+		var date = event.currentTarget.value;
+		var formateddate = moment(date, ["DDMMYYYY", "DD/MM/YYYY"]);
+		event.currentTarget.value = moment(formateddate).format("DD/MM/YYYY");
+	},
 	'change .myFileInput': function (event, template) {
 		FS.Utility.eachFile(event, function (file){
 			Images.insert(file, function (err, fileObj) {

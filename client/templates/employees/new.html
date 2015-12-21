@@ -28,7 +28,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="eight wide field">
+							<div class="six wide field">
 								<label for="country">Nacionalidad</label>
 								<div class="ui fluid search selection dropdown" id="country">
 									<input type="hidden" name="country">
@@ -47,23 +47,32 @@
 								<label>Teléfonos</label>
 								<div class="two fields">
 									<div class="field">
-										<input type="tel" name="office_phone" id="office_phone" placeholder="Oficina">
+										<div class="ui left icon input">
+											<i class="building icon"></i>
+											<input type="tel" name="office_phone" id="office_phone" placeholder="Oficina">
+										</div>	
 									</div>
 									<div class="field">
-										<input type="tel" name="mobile_phone" id="mobile_phone" placeholder="Celular">
+										<div class="ui left icon input">
+											<i class="mobile icon"></i>
+											<input type="tel" name="mobile_phone" id="mobile_phone" placeholder="Celular">
+										</div>
 									</div>
 								</div>
 							</div>
 							<div class="six wide field">
 								<label>Correo Electrónico</label>
-								<input type="email" name="email" id="email" placeholder="usuario@dominio.com">
+								<div class="ui left icon input">
+									<i class="mail outline icon"></i>
+									<input type="email" name="email" id="email" placeholder="usuario@dominio.com">
+								</div>
 							</div>	
 						</div>
 						<h4 class="ui dividing header">
 							Datos Laborales
 						</h4>
 						<div class="fields">
-							<div class="ten wide field">
+							<div class="twelve wide field">
 								<label>Cargo</label>
 								<div class="two fields">
 									<div class="field">
@@ -84,9 +93,17 @@
 									</div>
 								</div>	
 							</div>
+							<div class="field">
+								<label for="startDate">Fecha de ingreso</label>
+								<div class="ui left icon input">
+									<i class="calendar icon"></i>
+									<input type="text" id="startDate" class="date" name="startDate" placeholder="DD/MM/YYYY">	
+								</div>						
+							</div>
 						</div>				
 					</div>
-				</div>	
+					<button type="submit" class="ui right labeled icon primary button"><i class="save icon"></i>Guardar</button>
+				</div>
 			</form>
 		</div>
 	</div>
