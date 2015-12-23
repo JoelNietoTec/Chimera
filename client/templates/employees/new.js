@@ -69,16 +69,12 @@ Template.newEmployee.events({
 
 	},
 	'blur #startDate': function(event, template) {
-		event.preventDefault();
-		var date = event.currentTarget.value;
-		var formateddate = moment(date, ["DDMMYYYY", "DD/MM/YYYY"]);
-		event.currentTarget.value = moment(formateddate).format("DD/MM/YYYY");
+		dateMoment(event, template);
 	},
 	'change .myFileInput': function (event, template) {
 		FS.Utility.eachFile(event, function (file){
 			Images.insert(file, function (err, fileObj) {
 				if (err) {
-
 				} else {
 					var imagesURL = {
 						"profiles.image" : "/cfs/files/images/" + fileObj._id
