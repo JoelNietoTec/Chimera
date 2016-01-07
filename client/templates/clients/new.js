@@ -7,7 +7,6 @@ Template.newClient.helpers({
 	}
 });
 
-
 Template.newClient.onRendered(function() {
 	this.$('#clientType').dropdown({
 		onChange: function(val) {
@@ -27,8 +26,6 @@ Template.legalClient.onRendered(function() {
 	this.$('.ui.dropdown').dropdown({
 		fullTextSearch: true
 	});
-});
-
 
 Template.naturalClient.helpers({
 	sexes: function () {

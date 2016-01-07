@@ -1,10 +1,16 @@
-<template name="profileClient">
+<template name="pageClient">
 	<div class="ui stackable centered grid">
 		<div class="ui ten wide column">
-			<div class="ui stacked segment">
-				<h3 class="ui dividing header">Perfil del Cliente</h3>
-				<p><i class="user icon"></i>{{businessName}}</p>
-				
+			<div class="ui piled segment">
+				<h4 class="ui header"><i class=" icon"></i> {{businessName}}</h4>
+				<table class="ui definition very basic table">
+					<tbody>
+						<tr>
+							<td class="eight wide">Tipo de cliente</td>
+							<td class="eight wide">{{clientType}}</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
