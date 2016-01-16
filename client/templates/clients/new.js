@@ -26,6 +26,7 @@ Template.legalClient.onRendered(function() {
 	this.$('.ui.dropdown').dropdown({
 		fullTextSearch: true
 	});
+});
 
 Template.naturalClient.helpers({
 	sexes: function () {
@@ -49,6 +50,24 @@ Template.legalClient.helpers({
 });
 
 Template.newClient.events({
+	'click .button.approve': function() {
+		$('.ui.modal#save')
+			.modal({
+				onApprove: function() {
+					$('.ui.form').submit();
+				}
+			})
+			.modal('show')
+	},
+	'click .button.cancel': function() {
+		$('.ui.modal#cancel')
+			.modal({
+				onApprove: function() {
+					Router.go('listClients');
+				}
+			})
+			.modal('show')
+	},
 	'submit form': function (e) {
 		e.preventDefault();
 		var $form = $('.ui.form');

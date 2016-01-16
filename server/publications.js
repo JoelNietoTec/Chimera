@@ -11,7 +11,7 @@ Meteor.publish('countries', function() {
 });
 
 Meteor.publish('positions', function() {
-	return Positions.find();
+	return Positions.find();	
 });
 
 Meteor.publish('currentProfile', function() {

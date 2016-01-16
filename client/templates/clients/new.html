@@ -25,12 +25,12 @@
 					</div>
 					{{#if isEqual currentType 'Natural'}}
 						{{> naturalClient}}
-						<a href="{{pathFor 'listClients'}}" class="ui right labeled icon button"><i class="ban icon"></i>Cancelar</a>
-						<button type="submit" class="ui right labeled icon primary button"><i class="save icon"></i>Guardar</button>
+						<a href="#" class="ui right labeled icon button cancel"><i class="ban icon"></i>Cancelar</a>
+						<a href="#" class="ui right labeled icon primary button approve"><i class="save icon"></i>Guardar</a>
 					{{else}}
 						{{#if isEqual currentType 'Jurídica'}}
 							{{> legalClient}}
-							<a href="{{pathFor 'listClients'}}" class="ui right labeled icon button"><i class="ban icon"></i>Cancelar</a>
+							<a href="#" class="ui right labeled icon button cancel"><i class="ban icon"></i>Cancelar</a>
 							<button type="submit" class="ui right labeled icon primary button"><i class="save icon"></i>Guardar</button>
 						{{/if}}		
 					{{/if}}				
@@ -38,4 +38,6 @@
 			</form>
 		</div>
 	</div>
+	{{{ confirmation 'cancel' 'Creación cancelada' 'Desea salir sin guardar el cliente creado?<br>Los datos se perderán...' 'warning circle' }}}
+	{{{ confirmation 'save' 'Nuevo cliente' 'Desea guardar los cambios creados? <br> Se creara un nuevo cliente...' 'save'}}}
 </template>

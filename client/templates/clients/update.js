@@ -18,6 +18,24 @@ Template.legalClient.onRendered(function() {
 });
 
 Template.updateClient.events({
+	'click .button.approve': function() {
+		$('.ui.modal#save')
+			.modal({
+				onApprove: function() {
+					$('.ui.form').submit();
+				}
+			})
+			.modal('show')
+	},
+	'click .button.cancel': function() {
+		$('.ui.modal#cancel')
+			.modal({
+				onApprove: function() {
+					Router.go('listClients');
+				}
+			})
+			.modal('show')
+	},
 	'submit form': function (e) {
 		e.preventDefault();
 
