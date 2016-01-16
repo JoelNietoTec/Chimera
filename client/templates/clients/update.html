@@ -9,11 +9,13 @@
 					{{#if isEqual currentType 'Natural'}}
 						{{> naturalClient}}
 						<a href="#" class="ui right labeled icon button cancel"><i class="ban icon"></i>Cancelar</a>
+						<a href="#" class="ui right labeled icon negative button remove"><i class="erase icon"></i>Borrar</a>
 						<a href="#" class="ui right labeled icon primary button approve"><i class="save icon"></i>Guardar</a>
 					{{else}}
 						{{#if isEqual currentType 'Jurídica'}}
 							{{> legalClient}}
 							<a href="#" class="ui right labeled icon button cancel"><i class="ban icon"></i>Cancelar</a>
+							<a href="" class="ui right labeled icon negative button remove"><i class="erase icon"></i>Borrar</a>
 							<a href="#" class="ui right labeled icon primary button approve"><i class="save icon"></i>Guardar</a>
 						{{/if}}		
 					{{/if}}				
@@ -23,4 +25,5 @@
 	</div>
 	{{{ confirmation 'cancel' 'Cambios cancelados' 'Desea salir sin guardar los cambios realizados?<br>Los datos se perderán...' 'warning circle' }}}
 	{{{ confirmation 'save' 'Guardar cambios de cliente' 'Desea guardar los cambios realizados?' 'save'}}}
+	{{{ confirmation 'remove' 'Borrar cliente' 'Desea borrar este cliente <br> Este cambio no puede deshacerse...' 'erase' }}}
 </template>

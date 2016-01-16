@@ -18,7 +18,8 @@ Template.legalClient.onRendered(function() {
 });
 
 Template.updateClient.events({
-	'click .button.approve': function() {
+	'click .button.approve': function(e) {
+		e.preventDefault();
 		$('.ui.modal#save')
 			.modal({
 				onApprove: function() {
@@ -27,7 +28,20 @@ Template.updateClient.events({
 			})
 			.modal('show')
 	},
-	'click .button.cancel': function() {
+	'click .button.remove': function(e) {
+		e.preventDefault();
+		var currentClientId = this._id;
+		$('.ui.modal#remove')
+			.modal({
+				onApprove: function() {
+					Clients.remove({_id: currentClientId});
+					Router.go('listClients');
+				}
+			})
+			.modal('show')
+	},
+	'click .button.cancel': function(e) {
+		e.preventDefault();
 		$('.ui.modal#cancel')
 			.modal({
 				onApprove: function() {
@@ -51,12 +65,10 @@ Template.updateClient.events({
 				businessName: _.property('surnames')(clientProperties).toUpperCase() + ", " + _.property('forenames')(clientProperties).toUpperCase()
 			});
 
-		//Se agregan la fecha de alta
+		//Se agregan la fecha de modificacion
 		clientProperties = _.extend(clientProperties, {
 			modifyDate: new Date()
 		});
-
-		console.log(clientProperties);
 
 		Clients.update(currentClientId, {$set: clientProperties});
 		
