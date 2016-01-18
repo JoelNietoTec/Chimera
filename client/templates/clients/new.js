@@ -14,6 +14,7 @@ Template.newClient.onRendered(function() {
 		}
 	});
 	Session.set('currentType', "");
+	clientAddress.remove();
 });
 
 Template.naturalClient.onRendered(function() {
@@ -55,7 +56,7 @@ Template.newClient.events({
 		$('.ui.modal#save')
 			.modal({
 				onApprove: function() {
-					$('.ui.form').submit();
+					$('.ui.form#general').submit();
 				}
 			})
 			.modal('show')
@@ -69,11 +70,26 @@ Template.newClient.events({
 			})
 			.modal('show')
 	},
-	'submit form': function (e) {
+	'submit .ui.form#general': function (e) {
 		e.preventDefault();
-		var $form = $('.ui.form');
+		var $form = $('.ui.form#general');
 
 		var client = $form.form('get values');
+
+		client = _.extend(client, {
+			clientType: Session.get('currentType')
+		});
+
+		var clientAddresses = [];
+
+		clientAddress.find().forEach(function (element) {
+			clientAddresses.push({
+				country: element.address_country,
+				city: element.city,
+				street: element.street,
+				address_text: element.address_text
+			})
+		});
 
 
 		if (_.property('clientType')(client) === 'Natural')
@@ -86,7 +102,12 @@ Template.newClient.events({
 			createdDate: new Date()
 		});
 
-		console.log(client);
+		console.log(clientAddresses);
+
+		client = _.extend(client, {
+			addresses: clientAddresses
+		})
+
 		Clients.insert(client);
 		Router.go('listClients');
 	}

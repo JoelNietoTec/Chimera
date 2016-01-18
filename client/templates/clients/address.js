@@ -18,11 +18,15 @@ Template.clientAddresses.events({
 	'click #add_address': function (e) {
 		e.preventDefault();
 
-		var $form = $('.ui.form');
+		var $form = $('.ui.form#address');
 
-		var address = $form.form('get values', ['address_country', 'city', 'street', 'address_text']);
+		var address = $form.form('get values', ['country', 'city', 'street', 'address_text']);
 		console.log(address);
 
 		insertAddress(address);
 	}
+});
+
+Template.clientAddresses.onRendered(function() {
+	clientAddress.remove({});
 });

@@ -5,7 +5,19 @@ Template.updateClient.onCreated(function() {
 Template.updateClient.helpers({
 	currentType: function () {
 		return Session.get('currentType');
+	}, 
+	address: function() {
+		return clientAddress.find();
 	}
+});
+
+
+Template.updateClient.onRendered(function() {
+	var address = [];
+	address = this.data.addresses;
+	address.forEach(function (element) {
+		clientAddress.insert(element);
+	});
 });
 
 Template.legalClient.onRendered(function() {

@@ -4,95 +4,97 @@
 		<a class="item" data-tab="addresses">Direcciones</a>
 	</div>
 	<div class="ui active tab segment" data-tab="general">
-		<div class="two fields">
-			<div class="field">
-				<label for="forenames">Nombres</label>
-				<input type="text" id="forenames" name="forenames" placeholder="Nombres..." value="{{forenames}}">
-			</div>
-			<div class="field">
-				<label for="surnames">Apellidos</label>
-				<input type="text" id="surnames" name="surnames" placeholder="Apellidos..." value="{{surnames}}">
-			</div>
-		</div>
-		<div class="fields">
-			<div class="four wide field">
-				<label for="sex">Sexo</label>
-				<div class="ui fluid selection dropdown" id="sex">
-					<input type="hidden" name="sex" value="{{sex}}">
-					<i class="dropdown icon"></i>
-					<div class="default text">Seleccionar...</div>
-					<div class="menu">
-						{{#each sexes}}
-							<div class="item" data-value="{{name}}"><i class="{{icon}} icon"></i>{{name}}</div>
-						{{/each}}
-					</div>
+		<form class="ui form" id="general">
+			<div class="two fields">
+				<div class="field">
+					<label for="forenames">Nombres</label>
+					<input type="text" id="forenames" name="forenames" placeholder="Nombres..." value="{{forenames}}">
+				</div>
+				<div class="field">
+					<label for="surnames">Apellidos</label>
+					<input type="text" id="surnames" name="surnames" placeholder="Apellidos..." value="{{surnames}}">
 				</div>
 			</div>
-			<div class="six wide field">
-				<label for="documentId">Documento de Identidad</label>
-				<div class="ui left action input">
-					<div class="ui basic floating dropdown button">
-						<input type="hidden" name="documentType" value="{{documentType}}">
-						<div class="default text">Tipo</div>
+			<div class="fields">
+				<div class="four wide field">
+					<label for="sex">Sexo</label>
+					<div class="ui fluid selection dropdown" id="sex">
+						<input type="hidden" name="sex" value="{{sex}}">
 						<i class="dropdown icon"></i>
+						<div class="default text">Seleccionar...</div>
 						<div class="menu">
-							{{#each documentTypes}}
-							<div class="item" data-value="{{name}}">{{name}}</div>
+							{{#each sexes}}
+								<div class="item" data-value="{{name}}"><i class="{{icon}} icon"></i>{{name}}</div>
 							{{/each}}
 						</div>
 					</div>
-					<input type="text" name="documentId" id="documentId" placeholder="Id Documento" value="{{documentId}}">
 				</div>
-			</div>
-			<div class="six wide field">
-				<label for="country">Nacionalidad</label>
-				<div class="ui fluid search selection dropdown" id="country">
-					<input type="hidden" name="country" value="{{country}}">
-					<i class="dropdown icon"></i>
-					<div class="default text">Seleccionar...</div>
-					<div class="menu">
-						{{#each countries}}
-							<div class="item" data-value="{{name}}"><i class="{{abbreviation}} flag"></i>{{capitalize esp_name}}</div>
-						{{/each}}
+				<div class="six wide field">
+					<label for="documentId">Documento de Identidad</label>
+					<div class="ui left action input">
+						<div class="ui basic floating dropdown button">
+							<input type="hidden" name="documentType" value="{{documentType}}">
+							<div class="default text">Tipo</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								{{#each documentTypes}}
+								<div class="item" data-value="{{name}}">{{name}}</div>
+								{{/each}}
+							</div>
+						</div>
+						<input type="text" name="documentId" id="documentId" placeholder="Id Documento" value="{{documentId}}">
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="fields">
-			<div class="ten wide field">
-				<label>Teléfonos</label>
-				<div class="three fields">
-					<div class="field">
-						<div class="ui left icon input">
-							<input type="tel" id="mobile_tel" name="mobile_tel" placeholder="Celular" value="{{mobile_tel}}">
-							<i class="mobile icon"></i>
+				<div class="six wide field">
+					<label for="country">Nacionalidad</label>
+					<div class="ui fluid search selection dropdown" id="country">
+						<input type="hidden" name="country" value="{{country}}">
+						<i class="dropdown icon"></i>
+						<div class="default text">Seleccionar...</div>
+						<div class="menu">
+							{{#each countries}}
+								<div class="item" data-value="{{name}}"><i class="{{abbreviation}} flag"></i>{{capitalize esp_name}}</div>
+							{{/each}}
 						</div>
 					</div>
-					<div class="field">
-						<div class="ui left icon input">
-							<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina" value="{{office_tel}}">
-							<i class="building outline icon"></i>
-						</div>
-					</div>
-					<div class="field">
-						<div class="ui left icon input">
-							<input type="tel" id="home_tel" name="home_tel" placeholder="Domicilio" value="{{home_tel}}">
-							<i class="home icon"></i>
-						</div>	
-					</div>
 				</div>
 			</div>
-			<div class="six wide field">
-				<label for="email">Correo electrónico</label>
-				<input type="email" id="email" name="email" placeholder="Correo electrónico" value="{{email}}">
+			<div class="fields">
+				<div class="ten wide field">
+					<label>Teléfonos</label>
+					<div class="three fields">
+						<div class="field">
+							<div class="ui left icon input">
+								<input type="tel" id="mobile_tel" name="mobile_tel" placeholder="Celular" value="{{mobile_tel}}">
+								<i class="mobile icon"></i>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui left icon input">
+								<input type="tel" id="office_tel" name="office_tel" placeholder="Oficina" value="{{office_tel}}">
+								<i class="building outline icon"></i>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui left icon input">
+								<input type="tel" id="home_tel" name="home_tel" placeholder="Domicilio" value="{{home_tel}}">
+								<i class="home icon"></i>
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div class="six wide field">
+					<label for="email">Correo electrónico</label>
+					<input type="email" id="email" name="email" placeholder="Correo electrónico" value="{{email}}">
+				</div>
 			</div>
-		</div>
-		<div class="fields">
-			<div class="ten wide field">
-				<label for="address">Dirección</label>
-				<input type="text" id="address" name="address" placeholder="Dirección de envío" value="{{address}}">
+			<div class="fields">
+				<div class="ten wide field">
+					<label for="address">Dirección</label>
+					<input type="text" id="address" name="address" placeholder="Dirección de envío" value="{{address}}">
+				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 	<div class="ui  tab segment" data-tab="addresses">
 		{{> clientAddresses}}
