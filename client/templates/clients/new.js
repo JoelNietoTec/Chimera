@@ -91,19 +91,3 @@ Template.newClient.events({
 		Router.go('listClients');
 	}
 });
-
-
-Template.clientAddresses.helpers({
-	countries: function () {
-		return Countries.find({}, {sort:{esp_name: 1}});
-	}, 
-	address: function() {
-		return clientAddress.find();
-	}
-});
-
-Template.clientAddresses.events({
-	'click .button #add_address': function (e) {
-		e.preventDefault();
-	}
-});

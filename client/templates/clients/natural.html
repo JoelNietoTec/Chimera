@@ -1,9 +1,9 @@
 <template name="naturalClient">
-	<div class="ui top attached pointing menu">
+	<div class="ui pointing menu">
 		<a class="item active" data-tab="general">Datos Generales</a>
 		<a class="item" data-tab="addresses">Direcciones</a>
 	</div>
-	<div class="ui bottom attached active tab segment" data-tab="general">
+	<div class="ui active tab segment" data-tab="general">
 		<div class="two fields">
 			<div class="field">
 				<label for="forenames">Nombres</label>
@@ -94,7 +94,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="ui bottom attached tab segment" data-tab="addresses">
+	<div class="ui  tab segment" data-tab="addresses">
 		{{> clientAddresses}}
 	</div>
 </template>
