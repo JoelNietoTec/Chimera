@@ -20,6 +20,7 @@ Template.naturalClient.onRendered(function() {
 	this.$('.ui.dropdown').dropdown({
 		fullTextSearch: true
 	});
+	$('.ui.pointing.menu .item').tab();
 });
 
 Template.legalClient.onRendered(function() {
@@ -88,5 +89,21 @@ Template.newClient.events({
 		console.log(client);
 		Clients.insert(client);
 		Router.go('listClients');
+	}
+});
+
+
+Template.clientAddresses.helpers({
+	countries: function () {
+		return Countries.find({}, {sort:{esp_name: 1}});
+	}, 
+	address: function() {
+		return clientAddress.find();
+	}
+});
+
+Template.clientAddresses.events({
+	'click .button #add_address': function (e) {
+		e.preventDefault();
 	}
 });

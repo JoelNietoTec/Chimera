@@ -1,11 +1,13 @@
 <template name="listClients">
 	<div class="ui stackable centered grid">
 		<div class="ui fourteen wide column">
-			<h1 class="ui header">Clientes</h1>
-			<a href="{{pathFor 'newClient'}}" class="ui primary button">
-				<i class="icon add user"></i>
-				Nuevo Cliente
-			</a>
+			<h2 class="ui header">
+				Clientes
+				<a href="{{pathFor 'newClient'}}" class="ui primary button">
+					<i class="icon add user"></i>
+					Nuevo Cliente
+				</a>
+			</h2>
 			<div class="ui blue stacked segment">
 				<form class="ui form">
 					<div class="fields">
