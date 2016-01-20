@@ -35,7 +35,7 @@ Template.updateClient.events({
 		$('.ui.modal#save')
 			.modal({
 				onApprove: function() {
-					$('.ui.form').submit();
+					$('.ui.form#general').submit();
 				}
 			})
 			.modal('show')
@@ -62,12 +62,12 @@ Template.updateClient.events({
 			})
 			.modal('show')
 	},
-	'submit form': function (e) {
+	'submit .ui.form#general': function (e) {
 		e.preventDefault();
 
 		var currentClientId = this._id;
 
-		var $form = $('.ui.form');
+		var $form = $('.ui.form#general');
 
 		var clientProperties = $form.form('get values');
 

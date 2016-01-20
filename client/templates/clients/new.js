@@ -84,7 +84,7 @@ Template.newClient.events({
 
 		clientAddress.find().forEach(function (element) {
 			clientAddresses.push({
-				country: element.address_country,
+				country: element.country,
 				city: element.city,
 				street: element.street,
 				address_text: element.address_text
