@@ -1,6 +1,6 @@
 <template name="listClients">
 	<div class="ui stackable centered grid">
-		<div class="ui fourteen wide column">
+		<div class="ui sixteen wide column">
 			<h2 class="ui header">
 				Clientes
 				<a href="{{pathFor 'newClient'}}" class="ui primary button">
@@ -23,7 +23,21 @@
 				</form>
 			</div>
 			{{#if clients.count}}
-				<table class="ui blue celled table">
+				<div class="ui four stackable cards">
+					{{#each clients}}
+						<div class="blue card">
+							<div class="content">
+								<a href="{{pathFor 'updateClient'}}" class="header">{{businessName}}</a>
+								<div class="meta">{{clientType}}</div>
+								<div class="description">{{{countryData country}}}</div>
+								<div class="description"><i class="mail icon"></i>{{email}}</div>
+								<div class="meta"><i class="add user icon"></i> {{formatDate createdDate}}</div>
+								<div class="meta"><i class="edit icon"></i>{{formatDate modifyDate}}</div>
+							</div>
+						</div>
+					{{/each}}
+				</div>
+<!--				<table class="ui blue celled table">
 					<thead>
 						<th>Tipo Cliente</th>
 						<th>Nombre</th>
@@ -44,7 +58,7 @@
 							</tr>
 						{{/each}}
 					</tbody>
-				</table>
+				</table> -->
 			{{else}}
 				<div class="ui piled segment">
 					<p>

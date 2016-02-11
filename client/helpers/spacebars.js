@@ -1,6 +1,7 @@
 // Mayusculas en nombres propios
 Template.registerHelper('capitalize', function(n){
-	return n.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+	var l = n.toLowerCase();
+	return l.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 });
 
 //Devuelve el correo del usuario actual
