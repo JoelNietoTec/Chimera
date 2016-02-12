@@ -68,9 +68,6 @@ Template.newEmployee.events({
 		Router.go('listEmployees', {});
 
 	},
-	'blur #startDate': function(event, template) {
-		dateMoment(event, template);
-	},
 	'change .myFileInput': function (event, template) {
 		FS.Utility.eachFile(event, function (file){
 			Images.insert(file, function (err, fileObj) {

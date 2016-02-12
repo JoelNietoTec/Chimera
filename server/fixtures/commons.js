@@ -13,3 +13,9 @@ if (documentTypes.find().count() === 0) {
 	documentTypes.insert({name: 'Pasaporte'});
 	documentTypes.insert({name: 'Otro'});
 }
+
+if (lawyerTypes.find().count() === 0) {
+	lawyerTypes.insert({name: 'Socio'});
+	lawyerTypes.insert({name: 'Asociado'});
+	lawyerTypes.insert({name: 'Asistente Legal'});
+}

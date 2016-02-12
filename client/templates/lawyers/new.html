@@ -6,15 +6,34 @@
 					<h4 class="ui dividing header">
 						Nuevo Abogado
 					</h4>
-					<div class="field">
-						<label>Nombre Completo</label>
-						<div class="two fields">
-							<div class="field">
-								<input type="text" name="forenames" placeholder="Nombres">
+					<div class="fields">
+						<div class="six wide field">
+							<label>Nombre Completo</label>
+							<input type="text" name="names" placeholder="Nombre del Abogado">
+						</div>
+						<div class="four wide field">
+							<label for="sex">Tipo</label>
+							<div class="ui fluid selection dropdown" id="type">
+								<input type="hidden" name="type" >
+								<i class="dropdown icon"></i>
+								<div class="default text">Seleccionar...</div>
+								<div class="menu">
+									{{#each types}}
+										<div class="item" data-value="{{name}}">{{name}}</div>
+									{{/each}}
+								</div>
 							</div>
-							<div class="field">
-								<input type="text" name="surnames" placeholder="Apellidos">
-							</div>
+						</div>
+						<div class="three wide field">
+							<label for="rate">Tarifa</label>
+							<input type="number" name="rate" placeholder="0.00">
+						</div>
+						<div class="three wide field">
+							<label for="startDate">Fecha de ingreso</label>
+							<div class="ui left icon input">
+								<i class="calendar icon"></i>
+								<input type="text" class="date" name="startDate" placeholder="DD/MM/YYYY">	
+							</div>						
 						</div>
 					</div>
 				</div>

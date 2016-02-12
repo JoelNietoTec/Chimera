@@ -30,6 +30,10 @@ Meteor.publish('industries', function() {
 	return Industries.find();
 });
 
+Meteor.publish('lawyerTypes', function() {
+	return lawyerTypes.find();
+});
+
 Meteor.publish('clients', function(searchText) {
 	if (searchText) {
 		return Clients.find(
